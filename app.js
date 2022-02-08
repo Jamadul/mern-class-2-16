@@ -7,13 +7,15 @@ acc_header.forEach(iteam => {
 
     iteam.addEventListener('click', function(){
 
-        const currenlyActiveiteam = document.querySelector('.accordion-header.active');
+        acc_header.forEach(iteam =>{
 
-        if( currenlyActiveiteam && currenlyActiveiteam !== iteam){
+           if( iteam != this){
 
-            currenlyActiveiteam.classList.toggle('active');
-            currenlyActiveiteam.nextElementSibling.style.height ='0px';
-        }
+            iteam.classList.remove('active');
+            iteam.nextElementSibling.style.height ='0px';
+           }
+
+        }); 
 
         iteam.classList.toggle('active');
         
